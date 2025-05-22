@@ -1,11 +1,11 @@
 name: Github Action
 
 on:
-   workflow_dispatch
+  workflow_dispatch
 
 jobs:
-   github-action:
-      runs-on: ubuntu-22.04
-      steps:
-         - name: print message
-            run: echo "Hello, Github Actions!!"
+  github-action:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: print message
+        run: echo "Hello, Github Actions!!"
