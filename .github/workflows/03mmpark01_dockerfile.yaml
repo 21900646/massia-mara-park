@@ -1,0 +1,25 @@
+name: massai mara park 01 dockerfile build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mmpark01_dockerfile_build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          load: true
+          tags: massai_mara:v1
+          cache-from: t
